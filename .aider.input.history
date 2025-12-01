@@ -318,3 +318,29 @@
 +- Focus on making the game playable first; polish features afterward.
 +- Do not add Web3 or external libraries yet; we only want a working, smooth game.
 +
+
+# 2025-12-01 07:49:58.512689
++Create a fully playable 2D browser game called "Pixel Rush" with the following:
++
++- Player can move smoothly with arrow keys or touch.
++- Merge objects to create new coins (Bitcoin, Ethereum).
++- Include collision detection, scoring, and progressive difficulty.
++- Display instructions at the start and a leaderboard for top scores.
++- All assets (sprites, tiles, sounds) generated using built-in browser capabilities only.
++- Keep code modular, clean, and compatible with modern browsers.
++- Focus on a fully playable game first; polish visuals and effects after.
++- Do not add Web3 or external libraries yet.
++
+
+# 2025-12-01 07:49:58.513077
++Create a fully playable 2D browser game called "Pixel Rush" with the following:
++
++- Player can move smoothly with arrow keys or touch.
++- Merge objects to create new coins (Bitcoin, Ethereum).
++- Include collision detection, scoring, and progressive difficulty.
++- Display instructions at the start and a leaderboard for top scores.
++- All assets (sprites, tiles, sounds) generated using built-in browser capabilities only.
++- Keep code modular, clean, and compatible with modern browsers.
++- Focus on a fully playable game first; polish visuals and effects after.
++- Do not add Web3 or external libraries yet.
++
