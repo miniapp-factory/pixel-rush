@@ -5,10 +5,13 @@ import { useEffect, useRef, useState, useCallback } from "react";
 const COIN_TYPES = [
   { id: "btc", name: "Bitcoin", color: "#f7931a", value: 1 },
   { id: "eth", name: "Ethereum", color: "#3c3c3d", value: 1 },
+  { id: "hny", name: "Honey", color: "#ffcc00", value: 2 },
+  { id: "mem", name: "Memecoin", color: "#ff00ff", value: 3 },
+  { id: "sol", name: "Solana", color: "#00ffff", value: 4 },
 ];
 
-const MAX_COINS = 10; // max active coins on screen
-const SPAWN_INTERVAL = 2000; // ms
+const MAX_COINS = 12; // max active coins on screen
+const INITIAL_SPAWN_INTERVAL = 2000; // ms
 const PLAYER_SPEED = 4;
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 600;
@@ -26,13 +29,27 @@ export default function Game() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [score, setScore] = useState(0);
   const [gameState, setGameState] = useState<
-    "menu" | "playing" | "gameover"
+    "menu" | "instructions" | "playing" | "gameover" | "leaderboard" | "congrats"
   >("menu");
-  const [player, setPlayer] = useState({ x: CANVAS_WIDTH / 2, y: CANVAS_HEIGHT / 2, size: 20 });
+  const [player, setPlayer] = useState({
+    x: CANVAS_WIDTH / 2,
+    y: CANVAS_HEIGHT / 2,
+    size: 20,
+  });
   const [coins, setCoins] = useState<Coin[]>([]);
   const [lastCoin, setLastCoin] = useState<Coin | null>(null);
   const [timeStart, setTimeStart] = useState<number | null>(null);
   const [prizePool, setPrizePool] = useState(0);
+  const [leaderboard, setLeaderboard] = useState<
+    { name: string; score: number; time: number; prize: number }[]
+  >([]);
+  const [spawnInterval, setSpawnInterval] = useState(INITIAL_SPAWN_INTERVAL);
+
+  // ---------- Load leaderboard ----------
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("leaderboard") ?? "[]");
+    setLeaderboard(stored);
+  }, []);
 
   // ---------- Input ----------
   useEffect(() => {
@@ -53,6 +70,46 @@ export default function Game() {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
+  // ---------- Touch support ----------
+  useEffect(() => {
+    let lastTouchX: number | null = null;
+    let lastTouchY: number | null = null;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      lastTouchX = touch.clientX;
+      lastTouchY = touch.clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (lastTouchX === null || lastTouchY === null) return;
+      const touch = e.touches[0];
+      const dx = touch.clientX - lastTouchX;
+      const dy = touch.clientY - lastTouchY;
+      setPlayer((p) => ({
+        ...p,
+        x: Math.max(0, Math.min(CANVAS_WIDTH - p.size, p.x + dx)),
+        y: Math.max(0, Math.min(CANVAS_HEIGHT - p.size, p.y + dy)),
+      }));
+      lastTouchX = touch.clientX;
+      lastTouchY = touch.clientY;
+    };
+
+    const handleTouchEnd = () => {
+      lastTouchX = null;
+      lastTouchY = null;
+    };
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, []);
+
   // ---------- Coin spawning ----------
   useEffect(() => {
     if (gameState !== "playing") return;
@@ -71,9 +128,16 @@ export default function Game() {
         };
         return [...c, newCoin];
       });
-    }, SPAWN_INTERVAL);
+    }, spawnInterval);
     return () => clearInterval(interval);
-  }, [gameState]);
+  }, [gameState, spawnInterval]);
+
+  // ---------- Progressive difficulty ----------
+  useEffect(() => {
+    if (score > 300) setSpawnInterval(800);
+    else if (score > 200) setSpawnInterval(1000);
+    else if (score > 100) setSpawnInterval(1200);
+  }, [score]);
 
   // ---------- Game loop ----------
   useEffect(() => {
@@ -131,7 +195,7 @@ export default function Game() {
       });
       setCoins(remaining);
 
-      // end condition: too many coins or time limit
+      // end condition: too many coins
       if (coins.length > MAX_COINS) {
         endGame();
       }
@@ -165,17 +229,87 @@ export default function Game() {
       prize: prizePool,
     };
     const stored = JSON.parse(localStorage.getItem("leaderboard") ?? "[]");
-    const updated = [...stored, record].sort((a, b) => b.score - a.score).slice(0, 5);
+    const updated = [...stored, record]
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5);
     localStorage.setItem("leaderboard", JSON.stringify(updated));
+    setLeaderboard(updated);
   };
+
+  const showInstructions = () => setGameState("instructions");
+  const showLeaderboard = () => setGameState("leaderboard");
+  const showCongrats = () => setGameState("congrats");
 
   return (
     <div className="relative w-full h-full">
       {gameState === "menu" && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white">
           <h1 className="text-4xl mb-4">Merge Coins</h1>
-          <button onClick={startGame} className="px-4 py-2 bg-blue-500 rounded">
+          <button
+            onClick={startGame}
+            className="px-4 py-2 bg-blue-500 rounded mb-2"
+          >
             Play
+          </button>
+          <button
+            onClick={showInstructions}
+            className="px-4 py-2 bg-gray-700 rounded mb-2"
+          >
+            How to Play
+          </button>
+          <button
+            onClick={showLeaderboard}
+            className="px-4 py-2 bg-gray-700 rounded"
+          >
+            Leaderboard
+          </button>
+        </div>
+      )}
+      {gameState === "instructions" && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white p-4">
+          <h2 className="text-3xl mb-4">How to Play</h2>
+          <p className="mb-2">
+            Move the green square with arrow keys or touch. Collect coins that
+            appear on the screen. When two coins of the same type touch the
+            player, they merge into a higher‑value coin. The more you collect,
+            the higher your score and the prize pool. Avoid letting too many
+            coins pile up or the game will end.
+          </p>
+          <button
+            onClick={() => setGameState("menu")}
+            className="px-4 py-2 bg-gray-700 rounded"
+          >
+            Back
+          </button>
+        </div>
+      )}
+      {gameState === "leaderboard" && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white p-4">
+          <h2 className="text-3xl mb-4">Leaderboard</h2>
+          <ol className="text-left">
+            {leaderboard.map((entry, idx) => (
+              <li key={idx} className="mb-1">
+                {idx + 1}. {entry.name} – {entry.score} pts
+              </li>
+            ))}
+          </ol>
+          <button
+            onClick={() => setGameState("menu")}
+            className="px-4 py-2 bg-gray-700 rounded mt-4"
+          >
+            Back
+          </button>
+        </div>
+      )}
+      {gameState === "congrats" && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white p-4">
+          <h2 className="text-3xl mb-4">Congratulations!</h2>
+          <p className="mb-2">You reached a high score of {score}.</p>
+          <button
+            onClick={() => setGameState("menu")}
+            className="px-4 py-2 bg-gray-700 rounded"
+          >
+            Back to Menu
           </button>
         </div>
       )}
@@ -184,8 +318,17 @@ export default function Game() {
           <h1 className="text-4xl mb-4">Game Over</h1>
           <p className="mb-2">Score: {score}</p>
           <p className="mb-2">Prize Pool: {prizePool}</p>
-          <button onClick={startGame} className="px-4 py-2 bg-blue-500 rounded">
+          <button
+            onClick={startGame}
+            className="px-4 py-2 bg-blue-500 rounded mb-2"
+          >
             Replay
+          </button>
+          <button
+            onClick={showLeaderboard}
+            className="px-4 py-2 bg-gray-700 rounded"
+          >
+            Leaderboard
           </button>
         </div>
       )}
