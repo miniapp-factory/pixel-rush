@@ -38,6 +38,8 @@ export default function Game() {
   });
   const [coins, setCoins] = useState<Coin[]>([]);
   const [lastCoin, setLastCoin] = useState<Coin | null>(null);
+  const [mergeFlash, setMergeFlash] = useState(false);
+  const [timeElapsed, setTimeElapsed] = useState(0);
   const [timeStart, setTimeStart] = useState<number | null>(null);
   const [prizePool, setPrizePool] = useState(0);
   const [leaderboard, setLeaderboard] = useState<
@@ -151,6 +153,22 @@ export default function Game() {
     const gameLoop = () => {
       // clear
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // draw grid background
+      const gridSize = 40;
+      ctx.strokeStyle = "#444";
+      ctx.lineWidth = 1;
+      for (let x = 0; x <= canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y <= canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
 
       // draw player
       ctx.fillStyle = "#00ff00";
@@ -186,6 +204,9 @@ export default function Game() {
             setLastCoin(merged);
             // replace last coin with merged
             setCoins((prev) => prev.filter((pc) => pc.id !== lastCoin.id));
+            // trigger merge flash
+            setMergeFlash(true);
+            setTimeout(() => setMergeFlash(false), 200);
           } else {
             setLastCoin(c);
           }
@@ -204,7 +225,8 @@ export default function Game() {
     };
 
     if (gameState === "playing") {
-      setTimeStart(Date.now());
+      if (!timeStart) setTimeStart(Date.now());
+      setTimeElapsed(Math.floor((Date.now() - (timeStart ?? Date.now())) / 1000));
       animationFrameId = requestAnimationFrame(gameLoop);
     }
 
@@ -244,7 +266,7 @@ export default function Game() {
     <div className="relative w-full h-full">
       {gameState === "menu" && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white">
-          <h1 className="text-4xl mb-4">Merge Coins</h1>
+          <h1 className="text-4xl mb-4">Pixel Rush – Crypto Merge</h1>
           <button
             onClick={startGame}
             className="px-4 py-2 bg-blue-500 rounded mb-2"
