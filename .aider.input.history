@@ -1,0 +1,54 @@
+
+# 2025-12-01 05:27:32.925429
++Code the following app
++```
++Create a clean and simple 2D pixel-style game using only built-in browser capabilities and no external dependencies. Include smooth player movement, obstacles or enemies, a scoring system, and progressive difficulty. Generate all game assets inside the project: pixel sprites, tiles, backgrounds, animations, UI icons, and basic sound effects. Organize everything into folders for assets, scripts, and scenes.
++
++When the player completes the final level, show a dedicated Congratulations Screen containing:
++• A large animated “CONGRATULATIONS!” message
++• Final score
++• Best performance stats (highest combo, fastest clear time, accuracy, or similar depending on gameplay)
++• A short text summary highlighting the player’s strongest skill
++• Buttons for replay, leaderboard, and return to menu
++
++Add a local Leaderboard System (no internet required). Store and display:
++• Player name
++• Score
++• Clear time
++• Best stat
++• Rank position
++Highlight the player’s new rank and show a “New Personal Best!” animation when applicable.
++
++Include standard UI screens using built-in elements: Main Menu, How to Play, Settings, Pause, Game Over, Leaderboard, and Congratulations.
++
++Keep everything fully self-contained, lightweight, and runnable without the internet. Make the overall experience polished, competitive, and visually engaging while staying within simple 2D constraints.
++```
++
++Generate an app logo and update the app metadata title and description.
+
+# 2025-12-01 05:27:32.925908
++Code the following app
++```
++Create a clean and simple 2D pixel-style game using only built-in browser capabilities and no external dependencies. Include smooth player movement, obstacles or enemies, a scoring system, and progressive difficulty. Generate all game assets inside the project: pixel sprites, tiles, backgrounds, animations, UI icons, and basic sound effects. Organize everything into folders for assets, scripts, and scenes.
++
++When the player completes the final level, show a dedicated Congratulations Screen containing:
++• A large animated “CONGRATULATIONS!” message
++• Final score
++• Best performance stats (highest combo, fastest clear time, accuracy, or similar depending on gameplay)
++• A short text summary highlighting the player’s strongest skill
++• Buttons for replay, leaderboard, and return to menu
++
++Add a local Leaderboard System (no internet required). Store and display:
++• Player name
++• Score
++• Clear time
++• Best stat
++• Rank position
++Highlight the player’s new rank and show a “New Personal Best!” animation when applicable.
++
++Include standard UI screens using built-in elements: Main Menu, How to Play, Settings, Pause, Game Over, Leaderboard, and Congratulations.
++
++Keep everything fully self-contained, lightweight, and runnable without the internet. Make the overall experience polished, competitive, and visually engaging while staying within simple 2D constraints.
++```
++
++Generate an app logo and update the app metadata title and description.
