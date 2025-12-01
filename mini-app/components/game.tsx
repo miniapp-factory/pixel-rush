@@ -2,13 +2,6 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 
-const COIN_TYPES = [
-  { id: "btc", name: "Bitcoin", color: "#f7931a", value: 1 },
-  { id: "eth", name: "Ethereum", color: "#3c3c3d", value: 1 },
-  { id: "hny", name: "Honey", color: "#ffcc00", value: 2 },
-  { id: "mem", name: "Memecoin", color: "#ff00ff", value: 3 },
-  { id: "sol", name: "Solana", color: "#00ffff", value: 4 },
-];
 
 const MAX_COINS = 12; // max active coins on screen
 const INITIAL_SPAWN_INTERVAL = 2000; // ms
