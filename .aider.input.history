@@ -294,3 +294,27 @@
 # 2025-12-01 07:17:33.575393
 +Create a 2D browser game where the player merges cryptocurrency coins (Bitcoin, Ethereum, etc.) to form higher-value coins. Include smooth drag-and-drop interactions, a scoring system, a leaderboard, and a visible prize pool. Keep the art minimal and pixel-style, generate all assets inside the project, and make the gameplay simple, addictive, and progressively harder as score increases.
 +
+
+# 2025-12-01 07:34:54.690446
++Fix my 2D browser game "Pixel Rush" so it fully loads and is playable. Ensure:
++
++- All assets (sprites, tiles, backgrounds, sounds) load correctly using only built-in browser capabilities.
++- Smooth player movement with arrow keys or touch.
++- Merge objects to create new coins (Bitcoin, Ethereum, Honey, Memecoin, Solana) with collision detection.
++- Add scoring, progressive difficulty, instructions at start, and a leaderboard.
++- Keep code modular, clean, and compatible with all modern browsers.
++- Focus on making the game playable first; polish features afterward.
++- Do not add Web3 or external libraries yet; we only want a working, smooth game.
++
+
+# 2025-12-01 07:34:54.691463
++Fix my 2D browser game "Pixel Rush" so it fully loads and is playable. Ensure:
++
++- All assets (sprites, tiles, backgrounds, sounds) load correctly using only built-in browser capabilities.
++- Smooth player movement with arrow keys or touch.
++- Merge objects to create new coins (Bitcoin, Ethereum, Honey, Memecoin, Solana) with collision detection.
++- Add scoring, progressive difficulty, instructions at start, and a leaderboard.
++- Keep code modular, clean, and compatible with all modern browsers.
++- Focus on making the game playable first; polish features afterward.
++- Do not add Web3 or external libraries yet; we only want a working, smooth game.
++
