@@ -1,3 +1,3 @@
-export const title = "Pixel Quest: A 2D Adventure Game";
-export const description = "Embark on a pixelated adventure, battle enemies, collect points, and climb the leaderboard in this lightweight 2D game.";
+export const title = "Merge Coins: Crypto Collector";
+export const description = "Collect and merge Bitcoin, Ethereum, and other crypto coins in a pixel‑style arcade. Score points, beat the leaderboard, and watch your prize pool grow.";
 export const url = process.env.NEXT_PUBLIC_URL;
