@@ -368,3 +368,71 @@
 +- No external libraries — use browser‑native HTML5/canvas/JS (or whichever engine OpenxAI uses internally).  
 +- Keep the game simple but playable: focus on coin‑merge mechanic, visual clarity, and interactivity.  
 +
+
+# 2025-12-01 08:13:30.335027
++Create a fully playable 2D browser game called "Pixel Rush – Crypto Merge".
++
++1. Gameplay:
++- Coins/figurines appear on a grid or field. Players can drag or move identical coins to merge them into the next-tier coin.
++- Merging mechanics: two identical coins merge visually and increase score. 
++- Coins/Figurines to include: Bitcoin, Ethereum, Solana, Honeytoken, Memecoin, each with a distinct sprite.
++- Make merging visually clear (animation or fade/scale effect).
++
++2. Controls:
++- Allow mouse, touch, and arrow keys for moving/merging coins.
++- Include simple drag-and-drop interaction for merging.
++
++3. User Interface:
++- Display score, instructions at game start, and a leaderboard for top scores.
++- Include a restart button or option to reset the game.
++
++4. Assets & Visuals:
++- All coin sprites, backgrounds, and sounds generated using built-in browser capabilities only (no external libraries).
++- Keep visuals clear, colorful, and recognizable.
++
++5. Game Features:
++- Progressive difficulty: more coins appear over time or merge faster.
++- Focus on making the game fully playable and fun first; polish graphics/effects afterward.
++
++6. Compatibility:
++- Ensure the game works in all modern browsers (desktop + mobile).
++- No Web3 or external dependencies yet.
++
++7. Additional instructions for AI:
++- Build the game from scratch; do NOT use any green box template or default collector game.
++- Modular and clean code so it can be easily edited later.
++
+
+# 2025-12-01 08:13:30.335582
++Create a fully playable 2D browser game called "Pixel Rush – Crypto Merge".
++
++1. Gameplay:
++- Coins/figurines appear on a grid or field. Players can drag or move identical coins to merge them into the next-tier coin.
++- Merging mechanics: two identical coins merge visually and increase score. 
++- Coins/Figurines to include: Bitcoin, Ethereum, Solana, Honeytoken, Memecoin, each with a distinct sprite.
++- Make merging visually clear (animation or fade/scale effect).
++
++2. Controls:
++- Allow mouse, touch, and arrow keys for moving/merging coins.
++- Include simple drag-and-drop interaction for merging.
++
++3. User Interface:
++- Display score, instructions at game start, and a leaderboard for top scores.
++- Include a restart button or option to reset the game.
++
++4. Assets & Visuals:
++- All coin sprites, backgrounds, and sounds generated using built-in browser capabilities only (no external libraries).
++- Keep visuals clear, colorful, and recognizable.
++
++5. Game Features:
++- Progressive difficulty: more coins appear over time or merge faster.
++- Focus on making the game fully playable and fun first; polish graphics/effects afterward.
++
++6. Compatibility:
++- Ensure the game works in all modern browsers (desktop + mobile).
++- No Web3 or external dependencies yet.
++
++7. Additional instructions for AI:
++- Build the game from scratch; do NOT use any green box template or default collector game.
++- Modular and clean code so it can be easily edited later.
++
