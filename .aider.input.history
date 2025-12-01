@@ -168,3 +168,103 @@
 
 # 2025-12-01 05:57:24.405243
 +apply changes
+
+# 2025-12-01 06:11:19.508042
++"Create a simple, fully self-contained 2D pixel-style browser game using only HTML, CSS, and JavaScript (no external libraries). Requirements:
++
++Gameplay & Mechanics:
++
++Smooth player movement using arrow keys or WASD.
++
++Simple obstacles that the player must avoid.
++
++Collectible coins as game objects: Bitcoin and Ethereum and any other coins.
++
++When the player collects coins of the same type consecutively, they visually merge into a larger coin and give bonus points. Keep the merge effect simple and clear.
++
++Scoring system: points for each coin collected, bonus points for merged coins.
++
++UI & Screens:
++
++Main Menu with: Play, Instructions, Leaderboard, and Exit buttons.
++
++Instructions screen showing how to move, collect coins, and merge them for bonuses.
++
++Leaderboard screen storing top 5 scores locally using localStorage, displaying player name and score. Highlight new personal best with a simple CSS effect.
++
++Pause and Game Over screens with score display.
++
++Visuals & Assets:
++
++Pixel-style coins: Bitcoin (orange) and Ethereum (purple) using small canvas sprites.
++
++Player represented as a simple pixel character.
++
++Obstacles and coins visually distinct and clearly visible.
++
++Performance & Functionality:
++
++Lightweight, fully self-contained, and runnable offline in any browser.
++
++Fixed 60 FPS using requestAnimationFrame.
++
++Simple collision detection for collecting coins and avoiding obstacles.
++
++Keep animations and effects minimal for smooth performance.
++
++Goal:
++
++Make the game playable, competitive, and visually clear. The player collects and merges coins to achieve the highest score. Include leaderboard, instructions, and functional gameplay."
+
+# 2025-12-01 06:11:19.508565
++"Create a simple, fully self-contained 2D pixel-style browser game using only HTML, CSS, and JavaScript (no external libraries). Requirements:
++
++Gameplay & Mechanics:
++
++Smooth player movement using arrow keys or WASD.
++
++Simple obstacles that the player must avoid.
++
++Collectible coins as game objects: Bitcoin and Ethereum and any other coins.
++
++When the player collects coins of the same type consecutively, they visually merge into a larger coin and give bonus points. Keep the merge effect simple and clear.
++
++Scoring system: points for each coin collected, bonus points for merged coins.
++
++UI & Screens:
++
++Main Menu with: Play, Instructions, Leaderboard, and Exit buttons.
++
++Instructions screen showing how to move, collect coins, and merge them for bonuses.
++
++Leaderboard screen storing top 5 scores locally using localStorage, displaying player name and score. Highlight new personal best with a simple CSS effect.
++
++Pause and Game Over screens with score display.
++
++Visuals & Assets:
++
++Pixel-style coins: Bitcoin (orange) and Ethereum (purple) using small canvas sprites.
++
++Player represented as a simple pixel character.
++
++Obstacles and coins visually distinct and clearly visible.
++
++Performance & Functionality:
++
++Lightweight, fully self-contained, and runnable offline in any browser.
++
++Fixed 60 FPS using requestAnimationFrame.
++
++Simple collision detection for collecting coins and avoiding obstacles.
++
++Keep animations and effects minimal for smooth performance.
++
++Goal:
++
++Make the game playable, competitive, and visually clear. The player collects and merges coins to achieve the highest score. Include leaderboard, instructions, and functional gameplay."
+
+# 2025-12-01 06:12:08.782823
++apply changes
+
+# 2025-12-01 06:12:08.783765
++apply changes
