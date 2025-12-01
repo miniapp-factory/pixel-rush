@@ -52,3 +52,119 @@
 +```
 +
 +Generate an app logo and update the app metadata title and description.
+
+# 2025-12-01 05:56:31.634222
++Create a clean, fully self-contained 2D pixel-style browser game using only built-in HTML, CSS, and JavaScript (no external libraries). Make it lightweight, offline-ready, and fully publishable. Include the following:
++
++Gameplay & Mechanics:
++
++Smooth player movement and responsive controls.
++
++Obstacles or enemies with simple AI.
++
++Scoring system and progressive difficulty.
++
++Limit active enemies to maintain performance.
++
++Assets:
++
++Pre-generated pixel sprites, tiles, backgrounds, UI icons, and basic sound effects stored in /assets/.
++
++All assets should be small and optimized for fast loading.
++
++UI & Screens:
++
++Main Menu, How to Play, Settings, Pause, Game Over, Leaderboard, and Congratulations screens.
++
++Use one main canvas for gameplay; overlay simple <div> elements for menus.
++
++Animate only the “Congratulations” message.
++
++Leaderboard:
++
++Offline leaderboard using localStorage.
++
++Store player name, score, clear time, and best stat.
++
++Show top 5 scores, highlight new personal best with a simple CSS effect.
++
++Congratulations Screen:
++
++Large animated “CONGRATULATIONS!” message.
++
++Final score and best performance stats.
++
++Short text summary of player’s strongest skill.
++
++Buttons: Replay, Leaderboard, Return to Menu.
++
++Performance & Publishing:
++
++Fixed 60 FPS loop using requestAnimationFrame.
++
++All scripts and assets relative; no internet required.
++
++Fully functional, lightweight, and polished.
++
++The goal is a small, visually appealing, competitive 2D browser game that works offline and can be published without issues."
+
+# 2025-12-01 05:56:31.635050
++Create a clean, fully self-contained 2D pixel-style browser game using only built-in HTML, CSS, and JavaScript (no external libraries). Make it lightweight, offline-ready, and fully publishable. Include the following:
++
++Gameplay & Mechanics:
++
++Smooth player movement and responsive controls.
++
++Obstacles or enemies with simple AI.
++
++Scoring system and progressive difficulty.
++
++Limit active enemies to maintain performance.
++
++Assets:
++
++Pre-generated pixel sprites, tiles, backgrounds, UI icons, and basic sound effects stored in /assets/.
++
++All assets should be small and optimized for fast loading.
++
++UI & Screens:
++
++Main Menu, How to Play, Settings, Pause, Game Over, Leaderboard, and Congratulations screens.
++
++Use one main canvas for gameplay; overlay simple <div> elements for menus.
++
++Animate only the “Congratulations” message.
++
++Leaderboard:
++
++Offline leaderboard using localStorage.
++
++Store player name, score, clear time, and best stat.
++
++Show top 5 scores, highlight new personal best with a simple CSS effect.
++
++Congratulations Screen:
++
++Large animated “CONGRATULATIONS!” message.
++
++Final score and best performance stats.
++
++Short text summary of player’s strongest skill.
++
++Buttons: Replay, Leaderboard, Return to Menu.
++
++Performance & Publishing:
++
++Fixed 60 FPS loop using requestAnimationFrame.
++
++All scripts and assets relative; no internet required.
++
++Fully functional, lightweight, and polished.
++
++The goal is a small, visually appealing, competitive 2D browser game that works offline and can be published without issues."
+
+# 2025-12-01 05:57:24.404841
++apply changes
+
+# 2025-12-01 05:57:24.405243
++apply changes
