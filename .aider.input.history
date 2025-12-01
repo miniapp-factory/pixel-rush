@@ -344,3 +344,27 @@
 +- Focus on a fully playable game first; polish visuals and effects after.
 +- Do not add Web3 or external libraries yet.
 +
+
+# 2025-12-01 08:00:51.569428
++Create a 2D browser game called "Pixel Rush – Crypto Merge".  
++- Gameplay: objects (coins / figurines) fall or appear randomly on a grid/field. Players can drag or move coins to merge identical coins (e.g. two Bitcoin → next‑tier coin or higher score).  
++- The coins/figurines are crypto-themed: include Bitcoin, Ethereum, Solana, Honeytoken, “Memecoin”, each as distinct coin sprites.  
++- On merge: coins should combine visually and upgrade (or disappear + increase score) — like a merge‑puzzle mechanic.  
++- Controls: allow touch (mobile) and mouse/keyboard (desktop).  
++- Visuals: show coin sprites clearly; grid or field background; simple UI for score.  
++- Features: scoring system, maybe timer or progressively more coins appearing; feedback on merges; ability to restart.  
++- No external libraries — use browser‑native HTML5/canvas/JS (or whichever engine OpenxAI uses internally).  
++- Keep the game simple but playable: focus on coin‑merge mechanic, visual clarity, and interactivity.  
++
+
+# 2025-12-01 08:00:51.569777
++Create a 2D browser game called "Pixel Rush – Crypto Merge".  
++- Gameplay: objects (coins / figurines) fall or appear randomly on a grid/field. Players can drag or move coins to merge identical coins (e.g. two Bitcoin → next‑tier coin or higher score).  
++- The coins/figurines are crypto-themed: include Bitcoin, Ethereum, Solana, Honeytoken, “Memecoin”, each as distinct coin sprites.  
++- On merge: coins should combine visually and upgrade (or disappear + increase score) — like a merge‑puzzle mechanic.  
++- Controls: allow touch (mobile) and mouse/keyboard (desktop).  
++- Visuals: show coin sprites clearly; grid or field background; simple UI for score.  
++- Features: scoring system, maybe timer or progressively more coins appearing; feedback on merges; ability to restart.  
++- No external libraries — use browser‑native HTML5/canvas/JS (or whichever engine OpenxAI uses internally).  
++- Keep the game simple but playable: focus on coin‑merge mechanic, visual clarity, and interactivity.  
++
