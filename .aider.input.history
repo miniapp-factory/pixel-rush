@@ -436,3 +436,53 @@
 +- Build the game from scratch; do NOT use any green box template or default collector game.
 +- Modular and clean code so it can be easily edited later.
 +
+
+# 2025-12-01 08:27:20.081544
++Replace the current default game with a fully playable 2D browser game that is fun and simple. 
++
++1. Gameplay:
++- Player controls a character (e.g., a square, spaceship, or runner) that can move using arrow keys or touch.
++- The goal: collect items (coins, stars, gems) while avoiding obstacles or enemies.
++- Each item collected increases score; hitting obstacles reduces score or ends game.
++
++2. Features:
++- Display instructions at the start explaining controls and goal.
++- Include a leaderboard that tracks the top 5 high scores.
++- Show current score during gameplay.
++- Add restart button to replay the game.
++
++3. Visuals & Assets:
++- Use simple, colorful shapes (rectangles, circles, triangles) for player, items, and obstacles.
++- All graphics and sounds generated using built-in browser capabilities only.
++- Keep the game modular and visually clear.
++
++4. Compatibility:
++- Ensure the game works on desktop and mobile browsers.
++- Focus on smooth, playable mechanics and fun gameplay.
++- No Web3 or external libraries required.
++
+
+# 2025-12-01 08:27:20.081970
++Replace the current default game with a fully playable 2D browser game that is fun and simple. 
++
++1. Gameplay:
++- Player controls a character (e.g., a square, spaceship, or runner) that can move using arrow keys or touch.
++- The goal: collect items (coins, stars, gems) while avoiding obstacles or enemies.
++- Each item collected increases score; hitting obstacles reduces score or ends game.
++
++2. Features:
++- Display instructions at the start explaining controls and goal.
++- Include a leaderboard that tracks the top 5 high scores.
++- Show current score during gameplay.
++- Add restart button to replay the game.
++
++3. Visuals & Assets:
++- Use simple, colorful shapes (rectangles, circles, triangles) for player, items, and obstacles.
++- All graphics and sounds generated using built-in browser capabilities only.
++- Keep the game modular and visually clear.
++
++4. Compatibility:
++- Ensure the game works on desktop and mobile browsers.
++- Focus on smooth, playable mechanics and fun gameplay.
++- No Web3 or external libraries required.
++
